@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './plantillas/header/header.component';
 import { FooterComponent } from './plantillas/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 //import { LoginComponent } from './vistas/login/login.component';
 //import { DashboardComponent } from './vistas/dashboard/dashboard.component';
 //import { NuevoPComponent } from './vistas/nuevo-p/nuevo-p.component';
@@ -25,7 +28,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule,
+     FormsModule,
+     HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
