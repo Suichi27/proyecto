@@ -3,6 +3,8 @@ import { Router,ActivatedRoute } from '@angular/router';
 import { PacienteI } from '../../modelo/paciente.interface';
 import { ApiService } from '../../servicios/api/api.service';
 import { FormGroup, FormControl,Validators} from '@angular/forms';
+import { responseI } from '../../modelo/response.interface';
+import { AlertasService } from '../../servicios/alertas/alertas.service';
 
 @Component({
   selector: 'app-editar-p',
@@ -11,7 +13,7 @@ import { FormGroup, FormControl,Validators} from '@angular/forms';
 })
 export class EditarPComponent implements OnInit{
 
-  constructor(private activerouter:ActivatedRoute, private router:Router,private api:ApiService){}
+  constructor(private activerouter:ActivatedRoute, private router:Router,private api:ApiService,private alertas:AlertasService){}
 
   datosPaciente:PacienteI;
   editarForm = new FormGroup({
@@ -53,20 +55,29 @@ getToken(){
 }
 
 postForm(form:PacienteI){
-  this.api.putPatient(form).subscribe(data=>{
-    console.log(data)
+  this.api.putPatient(form).subscribe( data =>{
+      let respuesta:responseI = data;
+      if(respuesta.status == "ok"){
+          this.alertas.showSuccess('Datos modificados','Hecho');
+      }else{
+          this.alertas.showError(respuesta.result.error_msg,'Error');
+      }
   })
-  console.log(form);
 }
-
 
 eliminar(){
   let datos:PacienteI = this.editarForm.value;
-    this.api.deletePatient(datos).subscribe(data =>{
-      console.log(data);
-    })
- 
+  this.api.deletePatient(datos).subscribe(data =>{
+    let respuesta:responseI = data;
+      if(respuesta.status == "ok"){
+          this.alertas.showSuccess('Paciente eliminado','Hecho');
+          this.router.navigate(['dashboard']);
+      }else{
+          this.alertas.showError(respuesta.result.error_msg,'Error');
+      }
+  })
 }
+
 
 
 salir(){
