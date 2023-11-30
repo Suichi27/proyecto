@@ -62,9 +62,10 @@ postForm(form:PacienteI){
 
 eliminar(){
   let datos:PacienteI = this.editarForm.value;
-  this.api.deletePatient(this.datos).subscribe(data=>{
-    console.log(data)
-  })
+    this.api.deletePatient(datos).subscribe(data =>{
+      console.log(data);
+    })
+ 
 }
 
 
