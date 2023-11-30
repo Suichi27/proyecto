@@ -54,6 +54,9 @@ getToken(){
 }
 
 postForm(form:PacienteI){
+  this.api.putPatient(form).subscribe(data=>{
+    console.log(data)
+  })
   console.log(form);
 }
 
