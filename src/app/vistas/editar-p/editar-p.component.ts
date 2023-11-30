@@ -3,7 +3,6 @@ import { Router,ActivatedRoute } from '@angular/router';
 import { PacienteI } from '../../modelo/paciente.interface';
 import { ApiService } from '../../servicios/api/api.service';
 import { FormGroup, FormControl,Validators} from '@angular/forms';
-import { responseI } from '../../modelo/response.interface';
 
 @Component({
   selector: 'app-editar-p',
@@ -61,6 +60,12 @@ postForm(form:PacienteI){
 }
 
 
+eliminar(){
+  let datos:PacienteI = this.editarForm.value;
+  this.api.deletePatient(this.datos).subscribe(data=>{
+    console.log(data)
+  })
+}
 
 
 salir(){

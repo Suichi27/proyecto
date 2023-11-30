@@ -43,7 +43,7 @@ export class ApiService {
     let direccion = this.url + "pacientes";
     let Options = {
       headers: new HttpHeaders({
-         'Conten-type': 'application/json'
+         'Content-type': 'application/json'
       }),
       body:from
     }
