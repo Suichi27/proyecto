@@ -46,7 +46,6 @@ ngOnInit(): void {
           'pacienteId': pacienteid,
          'fechaNacimiento': this.datosPaciente.FechaNacimiento
        });
-       console.log(this.editarForm.value)
   })
 }
 

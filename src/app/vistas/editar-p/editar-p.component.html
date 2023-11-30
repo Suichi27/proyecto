@@ -3,7 +3,7 @@
 
         <div class="container">
 
-                <form [formGroup]="editarForm" >
+                <form [formGroup]="editarForm" (ngSubmit)="postForm(editarForm.value)">
                         <div class="form-group">
                                 <label for="exampleFormControlInput1">Nombre</label>
                                 <input type="text" class="form-control"  placeholder="Nombre del paciente" formControlName="nombre">
