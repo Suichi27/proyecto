@@ -7,6 +7,7 @@ import { ListapacientesI } from '../../modelo/listapacientes.interface';
 import { PacienteI } from '../../modelo/paciente.interface';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -31,5 +32,23 @@ export class ApiService {
 
     return this.http.get<PacienteI>(direccion);
   }
+
+  putPatient(form:PacienteI):Observable<responseI>{
+    let direccion = this.url + "pacientes";
+    return this.http.put<responseI>(direccion, form);
+  }
+
+
+  deletePatient(from:PacienteI):Observable<responseI>{
+    let direccion = this.url + "pacientes";
+    let Options = {
+      headers: new HttpHeaders({
+         'Conten-type': 'application/json'
+      }),
+      body:from
+    }
+    return this.http.delete<responseI>(direccion, Options);
+  }
+
 
 }

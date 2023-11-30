@@ -8,4 +8,5 @@ export interface PacienteI{
     Genero:string;
     FechaNacimiento:string;
     Correo:string;
+    token:string;
 }
