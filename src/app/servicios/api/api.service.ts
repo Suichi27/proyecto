@@ -4,6 +4,7 @@ import { responseI } from '../../modelo/response.interface';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ListapacientesI } from '../../modelo/listapacientes.interface';
+import { PacienteI } from '../../modelo/paciente.interface';
 
 
 @Injectable({
@@ -23,6 +24,12 @@ export class ApiService {
   getAllPatients(page:number):Observable<ListapacientesI[]>{
     let direccion = this.url + "pacientes?page=" + page;
     return this.http.get<ListapacientesI[]>(direccion)
+  }
+
+  getSinglePatient(id:any):Observable<PacienteI>{
+    let direccion = this.url + "pacientes?id=" + id;
+
+    return this.http.get<PacienteI>(direccion);
   }
 
 }
