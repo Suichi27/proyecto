@@ -30,6 +30,13 @@ export class LoginComponent implements OnInit{
 
   ngOnInit(): void {
     
+    this.checkLocalStorage();
+  }
+
+  checkLocalStorage(){
+    if(localStorage.getItem('token')){
+      this.router.navigate(['dashboard']);
+    }
   }
 
   onLogin(form:LoginI){
