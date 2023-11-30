@@ -51,4 +51,10 @@ export class ApiService {
   }
 
 
+  postPatient(form:PacienteI):Observable<responseI>{
+    let direccion = this.url+ "bdhospital.pacientes";
+    return this.http.post<responseI>(direccion,form);
+  }
+
+
 }
