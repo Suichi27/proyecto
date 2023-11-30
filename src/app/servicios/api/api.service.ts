@@ -3,6 +3,7 @@ import { LoginI } from '../../modelo/login.interface';
 import { responseI } from '../../modelo/response.interface';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ListapacientesI } from '../../modelo/listapacientes.interface';
 
 
 @Injectable({
@@ -18,4 +19,10 @@ export class ApiService {
     let direccion = this.url + "auth";
     return this.http.post<responseI>(direccion,form);
   }
+
+  getAllPatients(page:number):Observable<ListapacientesI[]>{
+    let direccion = this.url + "pacientes?page=" + page;
+    return this.http.get<ListapacientesI[]>(direccion)
+  }
+
 }
