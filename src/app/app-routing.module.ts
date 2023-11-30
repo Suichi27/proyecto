@@ -10,7 +10,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'nuevoP',component:NuevoPComponent},
-  {path:'editarP',component:EditarPComponent}
+  {path:'editarP/:id',component:EditarPComponent}
 ];
 
 @NgModule({
