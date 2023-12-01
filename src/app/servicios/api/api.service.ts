@@ -56,4 +56,74 @@ postPatient(form:PacienteI):Observable<responseI>{
 }
 
 
+getAllCitas(page:number):Observable<ListapacientesI[]>{
+  let direccion = this.url + "citas?page=" + page;
+  return this.http.get<ListapacientesI[]>(direccion)
+}
+
+getSingleCita(id:any):Observable<PacienteI>{
+  let direccion = this.url + "citas?id=" + id;
+
+  return this.http.get<PacienteI>(direccion);
+}
+
+putCita(form:PacienteI):Observable<responseI>{
+  let direccion = this.url + "citas";
+  return this.http.put<responseI>(direccion, form);
+}
+
+
+deleteCita(from:PacienteI):Observable<responseI>{
+  let direccion = this.url + "citas";
+  let Options = {
+    headers: new HttpHeaders({
+       'Content-type': 'application/json'
+    }),
+    body:from
+  }
+  return this.http.delete<responseI>(direccion, Options);
+}
+
+postCita(form:PacienteI):Observable<responseI>{
+let direccion = this.url+ "citas";
+return this.http.post<responseI>(direccion,form);
+}
+
+
+getAllMeds(page:number):Observable<ListapacientesI[]>{
+  let direccion = this.url + "medicamentos?page=" + page;
+  return this.http.get<ListapacientesI[]>(direccion)
+}
+
+getSingleMed(id:any):Observable<PacienteI>{
+  let direccion = this.url + "medicamentos?id=" + id;
+
+  return this.http.get<PacienteI>(direccion);
+}
+
+putMed(form:PacienteI):Observable<responseI>{
+  let direccion = this.url + "medicamentos";
+  return this.http.put<responseI>(direccion, form);
+}
+
+
+deleteMed(from:PacienteI):Observable<responseI>{
+  let direccion = this.url + "medicamentos";
+  let Options = {
+    headers: new HttpHeaders({
+       'Content-type': 'application/json'
+    }),
+    body:from
+  }
+  return this.http.delete<responseI>(direccion, Options);
+}
+
+postMed(form:PacienteI):Observable<responseI>{
+let direccion = this.url+ "medicamentos";
+return this.http.post<responseI>(direccion,form);
+}
+
+
+
+
 }
