@@ -38,7 +38,7 @@ export class NuevoPComponent implements OnInit{
     this.api.postPatient(form).subscribe(data=>{
       console.log(data);
     })
-
+    console.log(form)
   }
 
   
