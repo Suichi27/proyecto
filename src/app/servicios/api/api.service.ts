@@ -50,5 +50,10 @@ export class ApiService {
     return this.http.delete<responseI>(direccion, Options);
   }
 
+postPatient(form:PacienteI):Observable<responseI>{
+  let direccion = this.url+ "pacientes";
+  return this.http.post<responseI>(direccion,form);
+}
+
 
 }

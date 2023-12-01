@@ -30,11 +30,14 @@ export class NuevoPComponent implements OnInit{
   constructor(private api:ApiService, private router:Router, private alert:AlertasService){}
 
   ngOnInit(): void {
-    
+    let token = localStorage.getItem('token');
+    this.nuevoForm.patchValue({'token' :  token});
   }
 
   postForm(form:PacienteI){
-    console.log(form);
+    this.api.postPatient(form).subscribe(data=>{
+      console.log(data);
+    })
 
   }
 
