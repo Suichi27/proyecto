@@ -17,6 +17,10 @@ export class HeaderComponent implements OnInit{
     
   }
 
+  listaPacientes(){
+    this.router.navigate(['Pacientes']);
+  }
+
   listaCitas(){
     this.router.navigate(['Citas']);
   }

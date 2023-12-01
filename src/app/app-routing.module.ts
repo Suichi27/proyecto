@@ -18,13 +18,13 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'nuevoP',component:NuevoPComponent},
   {path:'editarP/:id',component:EditarPComponent},
-  {path:'nuevoC',component:NuevoPComponent},
-  {path:'editarC/:id',component:EditarPComponent},
-  {path:'nuevoM',component:NuevoPComponent},
-  {path:'editarM/:id',component:EditarPComponent},
-  {path:'Citas',component:NuevoPComponent},
-  {path:'Medicamentos',component:EditarPComponent},
-  {path:'Pacientes',component:NuevoPComponent},
+  {path:'nuevoC',component:NuevoCComponent},
+  {path:'editarC/:id',component:EditarCComponent},
+  {path:'nuevoM',component:NuevoMComponent},
+  {path:'editarM/:id',component:EditarMComponent},
+  {path:'Citas',component:CitasComponent},
+  {path:'Medicamentos',component:MedicamentosComponent},
+  {path:'Pacientes',component:PacientesComponent},
 
 
 ];
