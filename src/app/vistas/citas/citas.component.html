@@ -1,1 +1,30 @@
-<p>citas works!</p>
+<app-header></app-header>
+<br>
+<div class="container">
+
+<h3> Lista de Citas</h3><br>
+<button type="button" class="btn btn-primary" (click)="nuevoCita()">Añadir Pacientes</button>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Paciente</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Motivo</th>
+        <th scope="col">Hora</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cita of citas" (click)="editarCita(cita.PacienteId)">
+        <th scope="row">{{cita.CitaId}}</th>
+        <td>{{cita.PacienteId}}</td>
+        <td>{{cita.Fecha}}</td>
+        <td>{{cita.Estado}}</td>
+        <td>{{cita.Motivo}}</td>
+        <td>{{cita.HoraInicio}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-footer></app-footer>

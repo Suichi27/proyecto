@@ -5,8 +5,10 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ListapacientesI } from '../../modelo/listapacientes.interface';
 import { PacienteI } from '../../modelo/paciente.interface';
-
-
+import { ListacitasI } from '../../modelo/listacitas.interface';
+import { ListamedicamentosI } from '../../modelo/listamedicamentos.interface';
+import { MedicamentoI } from '../../modelo/medicamento.interface';
+import { CitaI } from '../../modelo/cita.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -56,24 +58,24 @@ postPatient(form:PacienteI):Observable<responseI>{
 }
 
 
-getAllCitas(page:number):Observable<ListapacientesI[]>{
+getAllCitas(page:number):Observable<ListacitasI[]>{
   let direccion = this.url + "citas?page=" + page;
-  return this.http.get<ListapacientesI[]>(direccion)
+  return this.http.get<ListacitasI[]>(direccion)
 }
 
-getSingleCita(id:any):Observable<PacienteI>{
+getSingleCita(id:any):Observable<CitaI>{
   let direccion = this.url + "citas?id=" + id;
 
-  return this.http.get<PacienteI>(direccion);
+  return this.http.get<CitaI>(direccion);
 }
 
-putCita(form:PacienteI):Observable<responseI>{
+putCita(form:CitaI):Observable<responseI>{
   let direccion = this.url + "citas";
   return this.http.put<responseI>(direccion, form);
 }
 
 
-deleteCita(from:PacienteI):Observable<responseI>{
+deleteCita(from:CitaI):Observable<responseI>{
   let direccion = this.url + "citas";
   let Options = {
     headers: new HttpHeaders({
@@ -84,30 +86,30 @@ deleteCita(from:PacienteI):Observable<responseI>{
   return this.http.delete<responseI>(direccion, Options);
 }
 
-postCita(form:PacienteI):Observable<responseI>{
+postCita(form:CitaI):Observable<responseI>{
 let direccion = this.url+ "citas";
 return this.http.post<responseI>(direccion,form);
 }
 
 
-getAllMeds(page:number):Observable<ListapacientesI[]>{
+getAllMeds(page:number):Observable<ListamedicamentosI[]>{
   let direccion = this.url + "medicamentos?page=" + page;
-  return this.http.get<ListapacientesI[]>(direccion)
+  return this.http.get<ListamedicamentosI[]>(direccion)
 }
 
-getSingleMed(id:any):Observable<PacienteI>{
+getSingleMed(id:any):Observable<MedicamentoI>{
   let direccion = this.url + "medicamentos?id=" + id;
 
-  return this.http.get<PacienteI>(direccion);
+  return this.http.get<MedicamentoI>(direccion);
 }
 
-putMed(form:PacienteI):Observable<responseI>{
+putMed(form:MedicamentoI):Observable<responseI>{
   let direccion = this.url + "medicamentos";
   return this.http.put<responseI>(direccion, form);
 }
 
 
-deleteMed(from:PacienteI):Observable<responseI>{
+deleteMed(from:MedicamentoI):Observable<responseI>{
   let direccion = this.url + "medicamentos";
   let Options = {
     headers: new HttpHeaders({
@@ -118,7 +120,7 @@ deleteMed(from:PacienteI):Observable<responseI>{
   return this.http.delete<responseI>(direccion, Options);
 }
 
-postMed(form:PacienteI):Observable<responseI>{
+postMed(form:MedicamentoI):Observable<responseI>{
 let direccion = this.url+ "medicamentos";
 return this.http.post<responseI>(direccion,form);
 }
