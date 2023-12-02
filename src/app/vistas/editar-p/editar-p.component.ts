@@ -59,7 +59,8 @@ postForm(form:PacienteI){
       let respuesta:responseI = data;
       if(respuesta.status == "ok"){
           this.alertas.showSuccess('Datos modificados','Hecho');
-      }else{
+          this.router.navigate(['Pacientes']);
+        }else{
           this.alertas.showError(respuesta.result.error_msg,'Error');
       }
   })
@@ -71,7 +72,7 @@ eliminar(){
     let respuesta:responseI = data;
       if(respuesta.status == "ok"){
           this.alertas.showSuccess('Paciente eliminado','Hecho');
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['Pacientes']);
       }else{
           this.alertas.showError(respuesta.result.error_msg,'Error');
       }
@@ -81,7 +82,7 @@ eliminar(){
 
 
 salir(){
-  this.router.navigate(['dashboard']);
+  this.router.navigate(['Pacientes']);
 }
 
 

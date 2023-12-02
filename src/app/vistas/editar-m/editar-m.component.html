@@ -1,1 +1,34 @@
-<p>editar-m works!</p>
+<app-header></app-header>
+
+
+        <div class="container">
+
+                <form [formGroup]="editarForm" (ngSubmit)="postForm(editarForm.value)">
+                        <div class="form-group">
+                                <label for="exampleFormControlInput1">Nombre</label>
+                                <input type="text" class="form-control"  placeholder="Nombre del medicamento" formControlName="nombre">
+                        </div>
+                        <div class="form-group">
+                                <label for="exampleFormControlInput1">Costo</label>
+                                <input type="text" class="form-control"  placeholder="Costo" formControlName="costo">
+                            </div>
+                            <div class="form-group row">
+                                <div class="col">
+                                    <label for="exampleFormControlInput1">FechaVencimiento</label>
+                                    <input type="text" class="form-control"  placeholder="Fecha de vencimiento" formControlName="fechaVencimiento">     
+                                </div>
+                                <div class="col">
+                                    <label for="exampleFormControlInput1">Url Img</label>
+                                    <input type="text" class="form-control"  placeholder="Url" formControlName="img">     
+                                </div>         
+                            </div>
+                            <br><br>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="button" class="btn btn-danger" (click)="eliminar()">Eliminar</button>
+                            <button type="button" class="btn btn-dark" (click)="salir()">Salir</button>
+                            
+                </form>
+
+        </div>
+
+<app-footer></app-footer>
