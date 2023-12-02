@@ -57,6 +57,7 @@ postPatient(form:PacienteI):Observable<responseI>{
   return this.http.post<responseI>(direccion,form);
 }
 
+//CITAS
 
 getAllCitas(page:number):Observable<ListacitasI[]>{
   let direccion = this.url + "citas?page=" + page;
@@ -91,6 +92,8 @@ let direccion = this.url+ "citas";
 return this.http.post<responseI>(direccion,form);
 }
 
+
+//MEDICAMENTOS
 
 getAllMeds(page:number):Observable<ListamedicamentosI[]>{
   let direccion = this.url + "medicamentos?page=" + page;

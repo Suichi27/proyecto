@@ -16,7 +16,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let cita of citas" (click)="editarCita(cita.PacienteId)">
+      <tr *ngFor="let cita of citas" (click)="editarCita(cita.CitaId)">
         <th scope="row">{{cita.CitaId}}</th>
         <td>{{cita.PacienteId}}</td>
         <td>{{cita.Fecha}}</td>

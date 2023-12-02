@@ -54,7 +54,7 @@ postForm(form:MedicamentoI){
       let respuesta:responseI = data;
       if(respuesta.status == "ok"){
           this.alertas.showSuccess('Datos modificados','Hecho');
-          this.router.navigate(['Pacientes'])
+          this.router.navigate(['Medicamentos'])
         }else{
           this.alertas.showError(respuesta.result.error_msg,'Error');
       }
