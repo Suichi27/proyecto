@@ -1,5 +1,28 @@
 <app-header></app-header>
+<br>
 <div class="container">
-    <h3>Medicamentos</h3>
-    </div>
+
+<h3> Lista de Medicamentos</h3><br>
+<button type="button" class="btn btn-primary" (click)="nuevoMedicamento()">Añadir Pacientes</button>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Costo</th>
+        <th scope="col">FechaVencimiento</th>
+        <th scope="col">img</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let medicamento of medicamentos" (click)="editarMedicamento(medicamento.MedicamentoId)">
+        <th scope="row">{{medicamento.MedicamentoId}}</th>
+        <td>{{medicamento.Nombre}}</td>
+        <td>{{medicamento.Costo}}</td>
+        <td>{{medicamento.FechaVencimiento}}</td>
+        <td><img src={{medicamento.img}} alt=""></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 <app-footer></app-footer>

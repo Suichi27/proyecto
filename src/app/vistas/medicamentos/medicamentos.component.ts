@@ -9,10 +9,26 @@ import { ListamedicamentosI } from '../../modelo/listamedicamentos.interface';
   styleUrl: './medicamentos.component.css'
 })
 export class MedicamentosComponent implements OnInit {
-  constructor(){}
+  
+  medicamentos:ListamedicamentosI[] = [];
+
+  constructor(private api:ApiService,private router:Router){}
+
+
 
   ngOnInit(): void {
-    
+    this.api.getAllMeds(1).subscribe(data=>{
+      this.medicamentos = data;
+    })
   }
+
+  editarMedicamento(id:any){
+    this.router.navigate(['editarM',id]);
+  }
+
+  nuevoMedicamento(){
+    this.router.navigate(['nuevoM']);
+  }
+
 
 }
