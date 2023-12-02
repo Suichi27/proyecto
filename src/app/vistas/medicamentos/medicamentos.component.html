@@ -1,34 +1,24 @@
 <app-header></app-header>
-<br>
-<div class="container">
 
-<h3> Lista de Medicamentos</h3><br>
-<button type="button" class="btn btn-primary" (click)="nuevoMedicamento()">Añadir Pacientes</button>
-<table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Costo</th>
-        <th scope="col">FechaVencimiento</th>
-        <th scope="col">img</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let medicamento of medicamentos" (click)="editarMedicamento(medicamento.MedicamentoId)">
-        <th scope="row">{{medicamento.MedicamentoId}}</th>
-        <td>{{medicamento.Nombre}}</td>
-        <td>{{medicamento.Costo}}</td>
-        <td>{{medicamento.FechaVencimiento}}</td>
-        <td><img src={{medicamento.img}} alt=""></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<section class="our-webcoderskull padding-lg">
+  <div class="container">
+    <div class="row heading heading-icon">
+        <h2>Medicamentos</h2>
+    </div>
+    <ul class="row" >
+      <li class="col-12 col-md-6 col-lg-3" *ngFor="let medicamento of medicamentos" (click)="editarMedicamento(medicamento.MedicamentoId)">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src={{medicamento.img}} alt=""></figure>
+            <h3>{{medicamento.Nombre}}</h3>
+            <p>Precio: S/{{medicamento.Costo}}</p>
+            <p>FVencimiento: {{medicamento.FechaVencimiento}}</p>
+          </div>
+      </li>
+    </ul>
+  </div>
+</section>
 
 <app-footer></app-footer>
