@@ -66,7 +66,7 @@ eliminar(){
   this.api.deleteMed(datos).subscribe(data =>{
     let respuesta:responseI = data;
       if(respuesta.status == "ok"){
-          this.alertas.showSuccess('Paciente eliminado','Hecho');
+          this.alertas.showSuccess('Medicamento eliminado','Hecho');
           this.router.navigate(['Medicamentos']);
       }else{
           this.alertas.showError(respuesta.result.error_msg,'Error');

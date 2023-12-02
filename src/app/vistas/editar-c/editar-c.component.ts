@@ -71,7 +71,7 @@ export class EditarCComponent implements OnInit {
     this.api.deleteCita(datos).subscribe(data =>{
       let respuesta:responseI = data;
         if(respuesta.status == "ok"){
-            this.alertas.showSuccess('Paciente eliminado','Hecho');
+            this.alertas.showSuccess('Cita eliminada','Hecho');
             this.router.navigate(['Citas']);
         }else{
             this.alertas.showError(respuesta.result.error_msg,'Error');
