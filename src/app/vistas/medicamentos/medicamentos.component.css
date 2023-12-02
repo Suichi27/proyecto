@@ -3,6 +3,9 @@ img{
     height: 300px;
 }
 
+
+
+
 .row.heading h2 {
     color: #fff;
     font-size: 52.52px;
@@ -58,13 +61,11 @@ ul{
 
 
 .our-webcoderskull{
-  background: url("http://www.webcoderskull.com/img/right-sider-banner.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background-color:#CCFFFF;
   
 }
+
+
 .our-webcoderskull .cnt-block{ 
    float:left; 
    width:100%; 
