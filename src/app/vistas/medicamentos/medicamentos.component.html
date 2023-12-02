@@ -4,10 +4,14 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <section class="our-webcoderskull padding-lg">
+
   <div class="container">
     <div class="row heading heading-icon">
         <h2>Medicamentos</h2>
+        
     </div>
+    <button type="button" class="btn btn-primary" (click)="nuevoMedicamento()">Añadir Pacientes</button>
+
     <ul class="row" >
       <li class="col-12 col-md-6 col-lg-3" *ngFor="let medicamento of medicamentos" (click)="editarMedicamento(medicamento.MedicamentoId)">
           <div class="cnt-block equal-hight" style="height: 349px;">

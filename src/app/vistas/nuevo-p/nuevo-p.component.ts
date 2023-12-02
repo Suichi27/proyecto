@@ -50,7 +50,7 @@ export class NuevoPComponent implements OnInit{
 
   
 salir(){
-  this.router.navigate(['dashboard']);
+  this.router.navigate(['Pacientes']);
 }
 
 
